@@ -50,4 +50,4 @@ build
 src/assets/svg/symbols.svg
 
 .idea
-
+.DS_Store

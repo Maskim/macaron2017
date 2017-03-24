@@ -1,0 +1,13 @@
+{
+  "title": "MACARON2017",
+  "description": "La landing page",
+  "notes": "",
+  "valid": {
+    "css"    : "KO",
+    "js"     : "KO",
+    "chrome" : "NON",
+    "firefox": "OUI",
+    "ie"     : "IE: NON<br>EDGE: OUI",
+    "safari" : "Mac OS: OUI<br> iOS: ?"
+  }
+}

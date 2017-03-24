@@ -1,0 +1,49 @@
+.list-images {
+  h2 {
+    font-size: em(40px);
+
+    span {
+      padding: rem(12px) rem(10px) rem(7px);
+    }
+  }
+}
+
+.block-image {
+  position: relative;
+  margin-bottom: rem($grid-padding);
+
+  h2,
+  p {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &_desc {
+    background: $white;
+    padding: rem(10px);
+    font-weight: 500;
+    display: inline-block;
+    max-width: 75%;
+  }
+
+  .inner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: rem($grid-gutter-width / 2);
+    right: rem($grid-gutter-width / 2);
+    padding: 0 rem($grid-gutter-width * 2);
+  }
+
+  &.no-background {
+    h2 {
+      span {
+        padding: 0;
+      }
+    }
+  }
+}

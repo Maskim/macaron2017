@@ -1,0 +1,159 @@
+{# test.twig #}
+{# ------------------------------------------------------------------------- #}
+
+{# VARIABLES STATIQUES #}
+{# ------------------------------------------------------------------------- #}
+{# Préférez mettre vos variables dans le fichier:                            #}
+{#     ./src/data/pages/test.json                                            #}
+{# De même, les variables "globales" d'environnement devrais être dans:      #}
+{#     ./src/data/data.json                                                  #}
+
+{# LAYOUT #}
+{# ------------------------------------------------------------------------- #}
+{% extends "../layouts/_default.twig" %}
+
+{# GABARIT PRINCIPAL #}
+{# ------------------------------------------------------------------------- #}
+{% block main %}
+    <section class="full-image">
+        <div class="full-image_image"></div>
+        <div class="full-image_content">
+            <div class="inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p class="tag">Moi Président</p>
+                            <h1>
+                                #MACARON2017<br />
+                                Le candidat de la transparence
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="alert alert-red">
+        <div class="container">
+            <div class="alert_inner">
+                <p class="tag">Soutenir</p>
+                <p class="text-uppercase alert_text">L'alternative surprise de la campagne présidentielle</p>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <h2>Osez la différence</h2>
+
+                    <div class="image-with-text">
+                        <p class="text">
+                            <span class="display-inline-block bg-red">Et pour ceux qui n'ont pas twitter, vous pouvez</span><br />
+                            <a href="#" class="display-inline-block bg-black">L'acheter ici</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                <h2>Soutenez le mouvement</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="list-images">
+        <div class="container">
+            <p class="tag">
+                Le Programme
+            </p>
+
+            <div class="row row-hard">
+                {% include '../blocks/block-image.html.twig' with {
+                    'title1': 'Un verre qui',
+                    'title2': 'tient ses promesses',
+                    'image': '/img/promesse.jpg',
+                    'desc': "Un design révolutionnaire qui fait l'unanimité chez<br /> les sommeliers et professionnels."
+                } %}
+
+                {% include '../blocks/block-image.html.twig' with {
+                    'title1': 'Votez pour',
+                    'title2': 'la transparence',
+                    'image': '/img/transparence.jpg',
+                    'desc': "La collection Macaron comprend 2 verres à vins et un de champagne, un gobelet à eau et une carafe.<br />
+                            Et aucune casserole&nbsp;!",
+                    'noBackground': true,
+                    'noDescBackground': true
+                } %}
+            </div>
+
+            <div class="row row-hard">
+                {% include '../blocks/block-image.html.twig' with {
+                'title1': "Si vous n'êtes pas rouge,",
+                'title2': 'votez blanc',
+                'image': '/img/blanc.jpg',
+                'desc': "Quel que soit le vin que vous dégustez, <br />
+                        il en exprime tout son potentiel",
+                'noDescBackground': true
+                } %}
+
+                {% include '../blocks/block-image.html.twig' with {
+                'title1': "Il défend tout le monde",
+                'title2': 'même les plus modestes',
+                'image': '/img/promesse.jpg',
+                'desc': "Sa forme unique sublime les plus grands vins et révèle les plus modestes"
+                } %}
+            </div>
+
+            <div class="row row-hard">
+                {% include '../blocks/block-image.html.twig' with {
+                'title1': "Il s'inscrit dans la durée",
+                'image': '/img/promesse.jpg',
+                'desc': "Quel que soit le vin que vous dégustez, <br />
+                        il en exprime tout son potentiel",
+                'noBackground': true,
+                'noDescBackground': true
+                } %}
+
+                {% include '../blocks/block-image.html.twig' with {
+                'title1': "Les jeunes avec",
+                'title2': 'macaron',
+                'image': '/img/promesse.jpg',
+                'desc': "Son design original favorise aussi<br />
+                        L'épanouissement des vins jeunes"
+                } %}
+            </div>
+
+            <div class="row row-hard">
+                {% include '../blocks/block-image.html.twig' with {
+                'title1': "La révolution",
+                'title2': "C'est maintenant",
+                'image': '/img/promesse.jpg',
+                'desc': "Sa silhouette en surprendra plus d'un.<br />
+                        Certainement un verre d'avant garde"
+                } %}
+
+                {% include '../blocks/block-image.html.twig' with {
+                'title1': "Un projet",
+                'title2': "d'ouverture",
+                'image': '/img/promesse.jpg',
+                'desc': "Dans sa partie supérieur, le deuxième globe permet au vins de s'ouvrir"
+                } %}
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center">
+        <p class="big-tag">
+            #MACARON2017
+        </p>
+    </section>
+
+    <section>
+        <p>#MACARON2017 en vidéo</p>
+        <p class="text-extra-small">Prochainement</p>
+    </section>
+{% endblock %}

@@ -1,0 +1,33 @@
+.alert {
+  padding: em($base-line-height / 2) 0;
+
+  &-red {
+    background: $red;
+    color: $white;
+
+    .tag {
+      color: $text;
+
+      &::before {
+        background: $white;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+      line-height: 1;
+    }
+  }
+
+  &_text {
+    font-size: em(26px);
+    font-weight: 900;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}

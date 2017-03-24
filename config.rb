@@ -5,7 +5,7 @@ Sass::Script::Number.precision = 8
 additional_import_paths = ['node_modules']
 
 # Load compass plugin by gems :
-# require 'sass-globbing'
+require 'sass-globbing'
 
 # Configuration des chemins des ressources:
 sass_dir        = './src/css'
@@ -30,6 +30,7 @@ else
     output_style =   :expanded
 end
 
+Encoding.default_external = 'UTF-8'
 
 # Supprimer le hash générer par compass sur le nom des sprites
 on_sprite_saved do |filename|

@@ -1,0 +1,23 @@
+.top-bar {
+  background: $black;
+  color: $white;
+
+  a {
+    font-size: em(20px);
+    color: $white;
+    padding: rem($base-line-height / 2) 0;
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  &_right {
+    a {
+      padding-left: rem($grid-gutter-width);
+    }
+  }
+
+  .top-bar_tag {
+    font-size: em(36px);
+    font-weight: 900;
+  }
+}

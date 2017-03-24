@@ -1,0 +1,30 @@
+.tag {
+  $fs: 24px;
+  font-size: em($fs);
+  @include paragraph(1, $fs);
+  padding-left: em($grid-gutter-width, $fs);
+  font-weight: 700;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: rem(4px);
+    height: rem(18px);
+    transform: translateY(-50%);
+    background: $red;
+  }
+}
+
+.big-tag {
+  font-size: em(46px);
+  font-weight: 900;
+  border: solid;
+  border-width: rem(13px) 0;
+  border-color: $black transparent $red;
+  padding: em(10px) 0;
+  display: inline-block;
+  margin-bottom: 0;
+}

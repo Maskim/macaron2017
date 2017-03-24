@@ -1,0 +1,13 @@
+<div class="block-image col-xs-6 {% if noBackground is defined and noBackground %}no-background{% endif %}">
+    <img src="{{ image }}" alt="">
+
+    <div class="inner">
+        <h2 class="text-uppercase">
+            <span class="display-inline-block {% if noBackground is not defined or not noBackground %}bg-black{% endif %}">{{ title1 }}</span><br />
+            {% if title2 is defined and title2 %}<span class="display-inline-block {% if noBackground is not defined or not noBackground %}bg-red{% endif %}">{{ title2 }}</span>{% endif %}
+        </h2>
+        <p class="block-image_desc {% if noBackground is not defined or not noBackground %}bg-white{% endif %}">
+            {{ desc|raw }}
+        </p>
+    </div>
+</div>
