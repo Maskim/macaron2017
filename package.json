@@ -1,13 +1,13 @@
 {
-  "name": "garden-starterkit",
-  "homepage": "https://github.com/cleverage/garden-starter-kit",
-  "title": "Garden Starter Kit",
-  "description": "Set de base pour les projets Garden statiques.",
+  "name": "Macaron2017",
+  "homepage": "https://github.com/Maskim/macaron2017",
+  "title": "Macaron 2017",
+  "description": "Page statique pour le produit macaron.",
   "version": "2.0.0-beta6",
   "license" : "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cleverage/garden-starter-kit.git"
+    "url": "https://github.com/Maskim/macaron2017"
   },
   "dependencies": {
     "autoprefixer": "6.7.6",

@@ -48,3 +48,6 @@ build
 
 # Ignorer le fichier contenant tous les symbols svg regroupés
 src/assets/svg/symbols.svg
+
+.idea
+
