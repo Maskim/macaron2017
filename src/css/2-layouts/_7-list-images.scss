@@ -12,8 +12,7 @@
   position: relative;
   margin-bottom: rem($grid-padding);
 
-  h2,
-  p {
+  h2 {
     margin-bottom: 0;
   }
 
@@ -28,15 +27,15 @@
     font-weight: 500;
     display: inline-block;
     max-width: 75%;
+    margin-bottom: em($base-line-height * 2);
   }
 
   .inner {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 0;
     left: rem($grid-gutter-width / 2);
     right: rem($grid-gutter-width / 2);
-    padding: 0 rem($grid-gutter-width * 2);
+    padding: 0 rem($grid-gutter-width * 2) rem($base-line-height);
   }
 
   &.no-background {
@@ -44,6 +43,21 @@
       span {
         padding: 0;
       }
+    }
+
+    .block-image_desc {
+      background: none;
+    }
+  }
+
+  &.on-black {
+    h2,
+    p {
+      color: $white;
+    }
+
+    h2 {
+      max-width: 60%;
     }
   }
 }

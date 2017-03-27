@@ -9,13 +9,6 @@ var lib = require('./lib/lib');
 // or directly import from node_modules
 // var _ = require('underscore');
 
-// some behaviour for our module
-function foo(firstname) {
-  window.console.log('Hello %s!', firstname);
-}
-
-foo(lib.firstname);
-
 
 // Use jQuery
 var $ = require('jquery');
@@ -25,17 +18,34 @@ var $ = require('jquery');
 window.$ = $;
 window.jQuery = $;
 
-// you can add jquery plugin just by requiring them (if they are compatible with CommonJS)
-require('slick-carousel');
-// now, that should work:
-$('#carousel').slick(); // FYI no `#carousel` element on page :D
+var onScroll = false;
 
-// Require lib that are not compatible with CommonJS (see `webpack-config.js`)
-// And https://webpack.github.io/docs/shimming-modules.html
+function scrollToElement( $element ) {
+    if ( onScroll ) { return; } //Prevent multi call at the same time
+    onScroll = true;
 
+    var dest;
+    if ( $element.offset().top > $( document ).height() - $( window ).height() ) {
+        dest = $( document ).height() - $( window ).height();
+    } else {
+        dest = $element.offset().top;
+    }
 
-// if you want to use global var from external lib
-window.globalVar = 'Loaded via window.globalVar';
+    //go to destination
+    $( 'html,body' ).animate({
+        scrollTop: dest
+    }, 800, 'swing', function () {
+        onScroll = false;
+    });
+}
 
-// expose foo to other modules
-module.exports = foo;
+$(document).ready(function() {
+    $('.top-bar a').on('click', function() {
+        var $target = $($(this).attr('href'));
+
+        if($target.length > 0) {
+            scrollToElement( $target );
+        }
+    });
+});
+

@@ -1,0 +1,38 @@
+.footer {
+  padding: em($base-line-height);
+
+  a {
+    color: $black;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  p {
+    font-size: rem(20px);
+    margin: 0 em(40px);
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    img {
+      height: 110px;
+      width: auto;
+    }
+  }
+
+  .logo-arc {
+    img {
+      height: 110px;
+      width: auto;
+    }
+  }
+}

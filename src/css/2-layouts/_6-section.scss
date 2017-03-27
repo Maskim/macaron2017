@@ -1,3 +1,141 @@
 .section {
   padding-top: em($base-line-height);
+
+  .image-with-text {
+    .text {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      max-width: 45%;
+      font-weight: 500;
+
+      span {
+        font-size: rem(20px);
+        padding: rem(20px) rem(40px);
+      }
+
+      a {
+        $fs: 36px;
+        font-size: rem($fs);
+        font-weight: 900;
+        padding: rem(20px) rem(30px);
+        position: relative;
+        transition: all 0.3s;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: rem(20px);
+          left: rem(30px);
+          right: rem(30px);
+          height: rem(4px);
+          background: $white;
+          transform: scaleX(0);
+          transition: all 0.3s;
+        }
+
+        &:hover,
+        &:focus {
+          padding-bottom: rem(40px);
+          text-decoration: none;
+
+          &::before {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-video {
+  text-align: center;
+  padding-top: em($base-line-height);
+
+  h2 {
+    $fs: 56px;
+    font-size: rem($fs);
+    margin-bottom: em($base-line-height / 2, $fs);
+  }
+
+  p {
+    font-weight: 500;
+    font-size: rem(18px);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .img-video {
+    margin-bottom: em(10px);
+  }
+}
+
+.section-boutique {
+  background: $light-grey;
+  padding-top: em($base-line-height * 5);
+  padding-bottom: em($base-line-height * 2);
+  margin-top: em(-$base-line-height * 2);
+
+  .bg-black {
+    padding: em(200px) 0 em(120px);
+    margin-bottom: em($base-line-height * 4);
+  }
+
+  .h2 {
+    font-weight: 700;
+    margin-bottom: rem($base-line-height * 2);
+  }
+
+  &_share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: rem($base-line-height * 2);
+    margin-bottom: rem($base-line-height * 2);
+
+    a {
+      color: $black;
+      margin: 0 rem(15px);
+    }
+
+    svg {
+      width: rem(50px);
+      height: rem(50px);
+    }
+  }
+
+  &_bottom {
+    padding-top: em($base-line-height * 2);
+
+    .contact {
+      font-size: em(20px);
+      margin-bottom: 0;
+
+      a {
+        color: $black;
+        transition: all 0.3s;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+.big-tag-section {
+  margin: em($base-line-height * 2) 0;
+}
+
+.flux-social {
+  .twitter-link {
+    iframe {
+      margin: 0 auto;
+    }
+  }
 }
