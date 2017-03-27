@@ -26,15 +26,16 @@
 
   &_content {
     display: flex;
-    align-items: flex-end;
 
     @include mq($from: tablet) {
       padding: em($base-line-height * 4) 0;
+      align-items: center;
       height: em(600px);
     }
 
     @include mq($until: tablet) {
       padding: em($base-line-height * 2) 0;
+      align-items: flex-end;
       height: em(500px);
     }
 
