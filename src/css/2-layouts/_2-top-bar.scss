@@ -5,19 +5,53 @@
   top: 0;
   left: 0;
   right: 0;
-  
+  z-index: 100;
+
+  @include mq($until: desktop) {
+    padding: rem(5px) 0;
+  }
 
   a {
-    font-size: em(20px);
     color: $white;
     padding: rem($base-line-height / 2) 0;
     display: inline-block;
     font-weight: 700;
+    transition: all 0.3s;
+
+    @include mq($from: mobile) {
+      font-size: em(20px);
+    }
+
+    @include mq($until: mobile) {
+      font-size: em(18px);
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $red;
+    }
+  }
+
+  &_inner {
+    align-items: center;
+
+    @include mq($from: desktop) {
+      justify-content: space-between;
+    }
+
+    @include mq($until: desktop) {
+      justify-content: center;
+    }
   }
 
   &_right {
+    @include mq($until: desktop) {
+      display: none;
+    }
+
     a {
-      padding-left: rem($grid-gutter-width);
+      padding-left: rem($grid-gutter-width * 3);
     }
   }
 

@@ -7,6 +7,7 @@
 
     .tag {
       color: $text;
+      padding-right: rem(20px);
 
       &::before {
         background: $white;
@@ -20,14 +21,22 @@
   }
 
   &_text {
-    font-size: em(26px);
     font-weight: 900;
     flex-grow: 1;
     text-align: center;
+
+    @include mq($from: tablet) {
+      font-size: em(26px);
+    }
+
+    @include mq($until: tablet) {
+      font-size: em(18px);
+    }
   }
 
   &_inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 }

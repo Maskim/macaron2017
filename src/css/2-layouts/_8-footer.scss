@@ -12,8 +12,11 @@
   }
 
   p {
-    font-size: rem(20px);
-    margin: 0 em(40px);
+    margin: 0 rem(40px);
+
+    @include mq($from: desktop) {
+      font-size: rem(20px);
+    }
   }
 
   &-inner {
@@ -23,6 +26,8 @@
   }
 
   .logo {
+    flex-shrink: 0;
+
     img {
       height: 110px;
       width: auto;
@@ -30,6 +35,8 @@
   }
 
   .logo-arc {
+    flex-shrink: 0;
+
     img {
       height: 110px;
       width: auto;

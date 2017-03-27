@@ -5,8 +5,8 @@
   box-sizing: border-box;
 
   @include mq($from: mobile) {
-    padding-left: rem($grid-padding);
-    padding-right: rem($grid-padding);
+    padding-left: rem($grid-padding * 2);
+    padding-right: rem($grid-padding * 2);
   }
 
   @include mq($until: mobile) {

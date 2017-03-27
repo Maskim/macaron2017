@@ -1,27 +1,39 @@
 .btn,
 button,
 .button {
-  font-size: em($btn-fs);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: em($btn-height, $btn-fs);
   font-weight: 700;
   border: 0;
   appearance: none;
-  padding: 0 em($grid-padding * 2, $btn-fs);
+  padding: 0 rem($grid-padding * 2);
   text-transform: uppercase;
   position: relative;
   transition: all 0.3s;
 
+  @include mq($from: tablet) {
+    font-size: em($btn-fs);
+    height: rem($btn-height);
+  }
+
+  @include mq($until: tablet) {
+    font-size: em(30px);
+    height: rem(80px);
+
+    span {
+      margin-top: rem(3px);
+    }
+  }
+
   svg {
-    width: em(25px, $btn-fs);
-    height: em(25px, $btn-fs);
+    width: rem(25px);
+    height: rem(25px);
   }
 
   span + svg,
   svg  + span {
-    margin-left: em($grid-padding / 2, $btn-fs);
+    margin-left: rem($grid-padding / 2);
   }
 }
 
@@ -32,7 +44,7 @@ button,
   &:hover,
   &:focus {
     text-decoration: none;
-    padding: 0 em($grid-padding * 3, $btn-fs);
+    padding: 0 rem($grid-padding * 3);
     background: darken($red, 10%);
   }
 }

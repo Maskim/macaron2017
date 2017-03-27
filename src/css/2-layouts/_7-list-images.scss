@@ -1,6 +1,15 @@
 .list-images {
+  padding-top: em($base-line-height);
+
   h2 {
-    font-size: em(40px);
+    @include mq($from: large) {
+      font-size: em(40px);
+    }
+
+    @include mq($until: large) {
+      $fs: 28px;
+      font-size: em($fs);
+    }
 
     span {
       padding: rem(12px) rem(10px) rem(7px);
@@ -21,13 +30,27 @@
     height: auto;
   }
 
+  @include mq($until: large) {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   &_desc {
     background: $white;
     padding: rem(10px);
     font-weight: 500;
     display: inline-block;
     max-width: 75%;
-    margin-bottom: em($base-line-height * 2);
+
+    @include mq($from: large) {
+      margin-bottom: em($base-line-height * 2);
+    }
+
+    @include mq($until: large) {
+      font-size: rem(14px);
+      margin-bottom: rem($base-line-height);
+    }
   }
 
   .inner {

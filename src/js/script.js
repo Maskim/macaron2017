@@ -12,6 +12,7 @@ var lib = require('./lib/lib');
 
 // Use jQuery
 var $ = require('jquery');
+require('./lib/waypoints.js');
 
 // expose jQuery as global
 // for console, external script on inline js if needed

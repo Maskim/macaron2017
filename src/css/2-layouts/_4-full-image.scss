@@ -1,9 +1,19 @@
 .full-image {
   position: relative;
+  margin-top: rem(40px);
 
   &_image {
     @include stretch;
-    background: url('/img/full-image.jpg') 50% 50% no-repeat $black;
+    background: url('/img/full-image.jpg') no-repeat $black;
+
+    @include mq($from: desktop) {
+      background-position: 50% 50%;
+    }
+
+    @include mq($until: desktop) {
+      background: url('/img/full-image-tablet.jpg') no-repeat $black;
+      background-position: 100% 50%;
+    }
 
     @include mq($from: 1900px) {
       background-size: auto 100%;
@@ -15,10 +25,18 @@
   }
 
   &_content {
-    padding: em($base-line-height * 4) 0;
     display: flex;
-    align-items: center;
-    height: em(600px);
+    align-items: flex-end;
+
+    @include mq($from: tablet) {
+      padding: em($base-line-height * 4) 0;
+      height: em(600px);
+    }
+
+    @include mq($until: tablet) {
+      padding: em($base-line-height * 2) 0;
+      height: em(500px);
+    }
 
     .inner {
       width: 100%;

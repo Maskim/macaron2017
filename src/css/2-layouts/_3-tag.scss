@@ -19,12 +19,19 @@
 }
 
 .big-tag {
-  font-size: em(46px);
   font-weight: 900;
   border: solid;
   border-width: rem(13px) 0;
   border-color: $black transparent $red;
-  padding: em(10px) 0;
+  padding: rem(20px) 0;
   display: inline-block;
   margin-bottom: 0;
+
+  @include mq($from: tablet) {
+    font-size: em(46px);
+  }
+
+  @include mq($until: tablet) {
+    font-size: em(36px);
+  }
 }

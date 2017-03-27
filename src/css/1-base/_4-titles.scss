@@ -1,19 +1,39 @@
 h1,
 .h1{
-  font-size: em($h1-fs);
   text-transform: uppercase;
   margin-bottom: 0;
   font-weight: 900;
   position: relative;
   color: $white;
+
+  @include mq($from: large) {
+    font-size: em($h1-fs);
+  }
+
+  @include mq($from: desktop, $until: large) {
+    font-size: em(54px);
+  }
+
+  @include mq($until: desktop) {
+    font-size: em(45px);
+  }
 }
 
 h2,
 .h2 {
-  font-size: em($h2-fs);
-  @include paragraph(1, $h2-fs);
   font-weight: 900;
   position: relative;
+
+  @include mq($from: desktop) {
+    font-size: em($h2-fs);
+    @include paragraph(1, $h2-fs);
+  }
+
+  @include mq($until: desktop) {
+    $fs: 36px;
+    font-size: em($fs);
+    @include paragraph(1, $fs);
+  }
 }
 
 h3,
