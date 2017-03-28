@@ -189,3 +189,26 @@ figure {
 .clearfix {
   @include clearfix;
 }
+
+label {
+  display: block;
+  font-size: rem(23px);
+  margin-bottom: rem($base-line-height / 2);
+  color: #526774;
+}
+
+textarea {
+  font-size: 16px;
+  width: 100%;
+  padding: rem($base-line-height / 2) rem(10px);
+  border: 1px solid $border;
+  margin-bottom: rem($base-line-height / 2);
+
+  @include mq($from: mobile) {
+    height: rem(70px);
+  }
+
+  @include mq($until: mobile) {
+    height: rem(110px);
+  }
+}

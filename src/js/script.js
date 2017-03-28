@@ -32,6 +32,12 @@ function scrollToElement( $element ) {
         dest = $element.offset().top;
     }
 
+    dest -= $('.top-bar').height();
+
+    if (dest < 0) {
+        dest = 0;
+    }
+
     //go to destination
     $( 'html,body' ).animate({
         scrollTop: dest
@@ -46,6 +52,23 @@ $(document).ready(function() {
 
         if($target.length > 0) {
             scrollToElement( $target );
+        }
+    });
+
+    $('.share-on-fb').on('click', function(ev) {
+        if(typeof FB !== 'undefined') {
+            ev.preventDefault();
+            
+            FB.ui( {
+                method: 'share',
+                href: 'http://www.macaron2017.com',
+                redirect_uri: 'http://www.macaron2017.com',
+                hashtag: '#Macaron2017',
+                quote: $(this).parents('.block-image').data('quote')
+            }, function ( response ) {
+            } );
+
+            return false;
         }
     });
 });

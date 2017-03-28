@@ -1,10 +1,13 @@
 .section {
   padding-top: em($base-line-height);
 
+  &-left {
+    margin-bottom: em($base-line-height);
+  }
+
   .image-with-text {
     .text {
       position: absolute;
-      left: 40%;
       top: 40%;
       font-weight: 500;
 
@@ -12,8 +15,17 @@
         max-width: 45%;
       }
 
-      @include mq($until: large) {
+      @include mq($from: mobile, $until: large) {
         max-width: 55%;
+      }
+
+      @include mq($from: mobile) {
+        left: 40%;
+      }
+
+      @include mq($until: mobile) {
+        left: 30%;
+        max-width: 70%;
       }
 
       span {
@@ -71,9 +83,51 @@
   }
 }
 
+.tw-comments {
+  border: 1px solid $border;
+  padding: em($base-line-height) em(10px);
+
+  &_sharer {
+    display: flex;
+
+    @include mq($from: mobile) {
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    @include mq($until: mobile) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .or {
+      font-size: rem(14px);
+      font-weight: 900;
+
+      @include mq($from: mobile) {
+        padding: 0 rem($grid-gutter-width);
+      }
+
+      @include mq($until: mobile) {
+        padding: rem($base-line-height / 2) 0;
+      }
+    }
+  }
+}
+
+.tw-timeline {
+  border: 1px solid $border;
+  padding-bottom: em($base-line-height);
+  margin-top: em($base-line-height);
+}
+
 .section-video {
   text-align: center;
-  padding-top: em($base-line-height);
+
+  @include mq($from: tablet) {
+    padding-top: em($base-line-height);
+  }
 
   h2 {
     @include mq($from: desktop) {
@@ -82,8 +136,14 @@
       margin-bottom: em($base-line-height / 2, $fs);
     }
 
-    @include mq($until: desktop) {
+    @include mq($from: mobile, $until: desktop) {
       $fs: 40px;
+      font-size: rem($fs);
+      margin-bottom: em($base-line-height / 2, $fs);
+    }
+
+    @include mq($until: mobile) {
+      $fs: 28px;
       font-size: rem($fs);
       margin-bottom: em($base-line-height / 2, $fs);
     }
@@ -106,15 +166,16 @@
 
 .section-boutique {
   background: $light-grey;
-  padding-bottom: em($base-line-height * 2);
   margin-top: em(-$base-line-height * 2);
 
   @include mq($from: tablet) {
     padding-top: em($base-line-height * 5);
+    padding-bottom: em($base-line-height * 2);
   }
 
   @include mq($until: tablet) {
     padding-top: em($base-line-height * 3);
+    padding-bottom: em($base-line-height);
   }
 
   .bg-black {
@@ -133,6 +194,12 @@
     @include mq($until: tablet) {
       padding: em(100px) 0 em(60px);
       margin-bottom: em($base-line-height * 2);
+    }
+
+    @include mq($until: mobile) {
+      padding: em(80px) em(10px) em(40px);
+      margin-left: rem(-$grid-gutter-width-mobile);
+      margin-right: rem(-$grid-gutter-width-mobile);
     }
   }
 
@@ -160,7 +227,9 @@
   }
 
   &_bottom {
-    padding-top: em($base-line-height * 2);
+    @include mq($from: tablet) {
+      padding-top: em($base-line-height * 2);
+    }
 
     .contact {
       margin-bottom: 0;
@@ -177,6 +246,12 @@
         &:focus {
           text-decoration: underline;
           color: $red;
+        }
+      }
+
+      @include mq($until: mobile) {
+        span {
+          display: block;
         }
       }
     }

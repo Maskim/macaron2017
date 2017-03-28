@@ -1,4 +1,4 @@
-<div class="block-image col-lg-6 {% if noBackground is defined and noBackground %}no-background{% endif %} {% if onBlack is defined and onBlack %}on-black{% endif %}">
+<div class="block-image col-lg-6 {% if noBackground is defined and noBackground %}no-background{% endif %} {% if onBlack is defined and onBlack %}on-black{% endif %}" data-quote="{{ title1 }} {% if title2 is defined and title2 %}{{ title2 }}{% endif %}">
     <img src="{{ image }}" alt="">
 
     <div class="inner">
@@ -11,26 +11,19 @@
             {{ desc|raw }}
         </p>
 
-        <p>
-            <button type="submit" class="share _2tga _49ve">
-                <div class="">
-                    <span class="_3jn- inlineBlock">
-                        <span class="_49vg">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="_1pbq">
-                                <path fill="#ffffff" fill-rule="evenodd" d="M8 14H3.667C2.733 13.9 2 13.167 2 12.233V3.667A1.65 1.65 0 0 1
-                                    3.667 2h8.666A1.65 1.65 0 0 1 14 3.667v8.566c0 .934-.733
-                                    1.667-1.667
-                                    1.767H10v-3.967h1.3l.7-2.066h-2V6.933c0-.466.167-.9.867-.9H12v-1.8c.033
-                                    0-.933-.266-1.533-.266-1.267 0-2.434.7-2.467
-                                    2.133v1.867H6v2.066h2V14z"></path>
-                            </svg>
-                            <img class="_1pbs inlineBlock img" src="https://www.facebook.com/rsrc.php/v3/yy/r/uPlIYLfynqH.png" alt="" width="16" height="16">
-                        </span>
-                    </span>
-                    <span class="_49vh _2pi7">Partager</span>
-                    <span class="_5n6h _2pih">3.1M</span>
-                </div>
-            </button>
+        <p class="block-image_share">
+            <a class="share-on-fb" href="https://www.facebook.com/dialog/share?&display=popup&redirect_uri=http://www.macaron2017.com" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="_1pbq"><path fill="#ffffff" fill-rule="evenodd" d="M8 14H3.667C2.733 13.9 2 13.167 2 12.233V3.667A1.65 1.65 0 0 1
+                    3.667 2h8.666A1.65 1.65 0 0 1 14 3.667v8.566c0 .934-.733
+                    1.667-1.667
+                    1.767H10v-3.967h1.3l.7-2.066h-2V6.933c0-.466.167-.9.867-.9H12v-1.8c.033
+                    0-.933-.266-1.533-.266-1.267 0-2.434.7-2.467
+                    2.133v1.867H6v2.066h2V14z"></path>
+                </svg>
+                <span>Partager</span>
+            </a>
+
+            <a href="https://twitter.com/VotezMacaron" class="twitter-follow-button" data-show-count="false">Tweet @VotezMacaron</a>
         </p>
     </div>
 </div>

@@ -23,7 +23,6 @@
   &_text {
     font-weight: 900;
     flex-grow: 1;
-    text-align: center;
 
     @include mq($from: tablet) {
       font-size: em(26px);
@@ -32,11 +31,21 @@
     @include mq($until: tablet) {
       font-size: em(18px);
     }
+
+    @include mq($from: landscape) {
+      text-align: center;
+    }
+
+    @include mq($until: landscape) {
+      padding-top: rem($base-line-height / 2);
+    }
   }
 
   &_inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mq($from: landscape) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }

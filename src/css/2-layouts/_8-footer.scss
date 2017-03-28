@@ -1,5 +1,5 @@
 .footer {
-  padding: em($base-line-height);
+  padding: em($base-line-height) 0;
 
   a {
     color: $black;
@@ -17,20 +17,42 @@
     @include mq($from: desktop) {
       font-size: rem(20px);
     }
+
+    @include mq($until: tablet) {
+      margin: em($base-line-height) 0;
+    }
+
+    @include mq($until: landscape) {
+      order: -1;
+      flex-basis: 100%;
+      margin-top: 0;
+      text-align: center;
+    }
   }
 
   &-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mq($until: landscape) {
+      flex-wrap: wrap;
+    }
   }
 
   .logo {
     flex-shrink: 0;
 
     img {
-      height: 110px;
       width: auto;
+
+      @include mq($from: tablet) {
+        height: 110px;
+      }
+
+      @include mq($until: tablet) {
+        height: 80px;
+      }
     }
   }
 

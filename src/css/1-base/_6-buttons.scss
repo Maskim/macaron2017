@@ -12,18 +12,23 @@ button,
   position: relative;
   transition: all 0.3s;
 
+  span {
+    margin-top: rem(3px);
+  }
+
   @include mq($from: tablet) {
     font-size: em($btn-fs);
     height: rem($btn-height);
   }
 
-  @include mq($until: tablet) {
+  @include mq($from: mobile, $until: tablet) {
     font-size: em(30px);
     height: rem(80px);
+  }
 
-    span {
-      margin-top: rem(3px);
-    }
+  @include mq($until: mobile) {
+    font-size: em(24px);
+    height: rem(60px);
   }
 
   svg {
@@ -46,5 +51,29 @@ button,
     text-decoration: none;
     padding: 0 rem($grid-padding * 3);
     background: darken($red, 10%);
+  }
+}
+
+.share-on-fb {
+  background: $facebook;
+  color: $white;
+  padding: rem(3px) rem(5px) 0;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    background: darken($facebook, 5%);
+    text-decoration: none;
+  }
+
+  svg {
+    width: rem(16px);
+    height: rem(16px);
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: rem(-1px);
   }
 }

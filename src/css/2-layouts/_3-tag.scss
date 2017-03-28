@@ -31,7 +31,11 @@
     font-size: em(46px);
   }
 
-  @include mq($until: tablet) {
+  @include mq($from: mobile, $until: tablet) {
     font-size: em(36px);
+  }
+
+  @include mq($until: mobile) {
+    font-size: em(26px);
   }
 }

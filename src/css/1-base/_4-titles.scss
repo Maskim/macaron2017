@@ -14,8 +14,12 @@ h1,
     font-size: em(54px);
   }
 
-  @include mq($until: desktop) {
+  @include mq($from: mobile, $until: desktop) {
     font-size: em(45px);
+  }
+
+  @include mq($until: mobile) {
+    font-size: em(28px);
   }
 }
 

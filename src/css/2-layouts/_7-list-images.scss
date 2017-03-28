@@ -6,8 +6,13 @@
       font-size: em(40px);
     }
 
-    @include mq($until: large) {
+    @include mq($from: mobile, $until: large) {
       $fs: 28px;
+      font-size: em($fs);
+    }
+
+    @include mq($until: mobile) {
+      $fs: 16px;
       font-size: em($fs);
     }
 
@@ -20,6 +25,11 @@
 .block-image {
   position: relative;
   margin-bottom: rem($grid-padding);
+
+  @include mq($until: mobile) {
+    margin-left: rem(-$grid-gutter-width-mobile);
+    margin-right: rem(-$grid-gutter-width-mobile);
+  }
 
   h2 {
     margin-bottom: 0;
@@ -47,9 +57,22 @@
       margin-bottom: em($base-line-height * 2);
     }
 
-    @include mq($until: large) {
+    @include mq($from: mobile, $until: large) {
       font-size: rem(14px);
       margin-bottom: rem($base-line-height);
+    }
+
+    @include mq($until: mobile) {
+      font-size: rem(12px);
+      margin-bottom: rem($base-line-height / 2);
+    }
+  }
+
+  &_share {
+    display: flex;
+
+    .share-on-fb {
+      margin-right: rem($grid-gutter-width / 2);
     }
   }
 
@@ -58,13 +81,20 @@
     bottom: 0;
     left: rem($grid-gutter-width / 2);
     right: rem($grid-gutter-width / 2);
-    padding: 0 rem($grid-gutter-width * 2) rem($base-line-height);
+
+    @include mq($from: mobile) {
+      padding: 0 rem($grid-gutter-width * 2) rem($base-line-height);
+    }
+
+    @include mq($until: mobile) {
+      padding: 0 rem($grid-gutter-width) rem($base-line-height / 2);
+    }
   }
 
   &.no-background {
     h2 {
       span {
-        padding: 0;
+        padding: 0 !important;
       }
     }
 
